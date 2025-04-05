@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRS Digital | Sua agência de marketing digital completa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Variáveis de cores */
+        :root {
+            --verde: #2ECC71;
+            --preto: #111111;
+            --branco: #FFFFFF;
+            --gelo: #F5F5F5;
+        }
+
+        /* Estilos gerais */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--preto);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 4px;
+            width: 60px;
+            background-color: var(--verde);
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--verde);
+            color: var(--branco);
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--verde);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--verde);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--verde);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--verde);
+            color: var(--branco);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--branco);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--preto);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--verde);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--branco);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        /* Benefícios */
+        .benefits {
+            background-color: var(--gelo);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 40px 30px;
+            background-color: var(--branco);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--verde);
+            margin-bottom: 20px;
+        }
+
+        /* Sobre */
+        .about-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Serviços */
+        .services {
+            background-color: var(--gelo);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-img {
+            height: 200px;
+            background-color: var(--preto);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--preto);
+        }
+
+        /* Provas Sociais */
+        .testimonials {
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonials h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background-color: var(--gelo);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .client-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .client-details h4 {
+            margin-bottom: 5px;
+        }
+
+        .client-details p {
+            margin-bottom: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contato */
+        .contact {
+            background-color: var(--gelo);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-info h2::after {
+            width: 40px;
+        }
+
+        .contact-form {
+            background-color: var(--branco);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 40px;
+            background-color: var(--verde);
+        }
+
+        .footer-column p {
+            color: #bbb;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--branco);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--verde);
+        }
+
+        .quick-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .quick-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .quick-links a:hover {
+            color: var(--verde);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Legal Pages */
+        .legal-page {
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+
+        .legal-content {
+            background-color: var(--branco);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .legal-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .legal-content h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .legal-content h3 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .legal-content p {
+            margin-bottom: 20px;
+        }
+
+        .legal-content ul, 
+        .legal-content ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .legal-content li {
+            margin-bottom: 10px;
+        }
+
+        .legal-content a {
+            color: var(--verde);
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-site {
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .about-container {
+                flex-direction: column;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">GRS <span>Digital</span></a>
+            <a href="#contact" class="btn btn-outline">Fale Conosco</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Sua agência de marketing digital completa</h1>
+                <p>Especialistas em atrair clientes, gerar autoridade e aumentar suas vendas online.</p>
+                <a href="#contact" class="btn">Quero ser nosso próximo case de sucesso</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2>Por que nos escolher</h2>
+            <p>Entregamos resultados reais para empresas que querem crescer no ambiente digital.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">👨‍💻</div>
+                    <h3>Equipe especializada</h3>
+                    <p>Profissionais capacitados com experiência em diversas áreas do marketing digital.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Resultados comprovados</h3>
+                    <p>Histórico de sucesso com clientes de diferentes segmentos e tamanhos.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Estratégias personalizadas</h3>
+                    <p>Soluções sob medida para atender às necessidades específicas do seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre nós -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2>Sobre nós</h2>
+                    <p>A GRS Digital nasceu da paixão por criar estratégias inovadoras que conectam marcas ao público certo. Com anos de experiência no mercado, nossa equipe multidisciplinar está pronta para transformar sua presença digital.</p>
+                    
+                    <h3>Missão</h3>
+                    <p>Potencializar o crescimento dos nossos clientes através de estratégias digitais inovadoras e resultados mensuráveis.</p>
+                    
+                    <h3>Visão</h3>
+                    <p>Ser referência nacional em marketing digital, reconhecida por transformar negócios através de soluções criativas e eficientes.</p>
+                    
+                    <h3>Valores</h3>
+                    <p>Comprometimento, transparência, inovação, resultado e excelência em tudo o que fazemos.</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="/api/placeholder/600/600" alt="Equipe GRS Digital">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <p>Soluções completas para impulsionar sua marca no ambiente digital.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/api/placeholder/400/250" alt="Gestão de redes sociais">
+                    </div>
+                    <div class="service-content">
+                        <h3>Gestão de redes sociais</h3>
+                        <p>Criação de conteúdo, planejamento estratégico e gerenciamento completo das suas redes sociais.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/api/placeholder/400/250" alt="Identidade visual">
+                    </div>
+                    <div class="service-content">
+                        <h3>Criação de identidade visual</h3>
+                        <p>Desenvolvimento de logos, materiais gráficos e identidade visual consistente para sua marca.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/api/placeholder/400/250" alt="Tráfego pago">
+                    </div>
+                    <div class="service-content">
+                        <h3>Tráfego pago</h3>
+                        <p>Campanhas otimizadas no Google, Meta (Facebook e Instagram) e TikTok para captar leads qualificados.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/api/placeholder/400/250" alt="Criação de sites">
+                    </div>
+                    <div class="service-content">
+                        <h3>Criação de sites e landing pages</h3>
+                        <p>Desenvolvimento de páginas otimizadas para conversão e experiência do usuário.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Provas Sociais -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <p>Conheça os resultados que temos alcançado para empresas como a sua.</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"A GRS Digital transformou completamente a presença digital da minha empresa. Em apenas três meses, aumentamos em 150% o número de leads qualificados."</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="/api/placeholder/100/100" alt="Cliente">
+                        </div>
+                        <div class="client-details">
+                            <h4>Marcos Silva</h4>
+                            <p>CEO da TechSolution</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"O investimento em tráfego pago com a GRS Digital trouxe um ROI impressionante. Para cada R$1 investido, retornamos R$7 em vendas."</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="/api/placeholder/100/100" alt="Cliente">
+                        </div>
+                        <div class="client-details">
+                            <h4>Ana Paula Costa</h4>
+                            <p>Diretora da Moda Express</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"A gestão de redes sociais feita pela equipe da GRS Digital aumentou nosso engajamento em 200% e triplicou nossas conversões online."</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="/api/placeholder/100/100" alt="Cliente">
+                        </div>
+                        <div class="client-details">
+                            <h4>Rafael Mendes</h4>
+                            <p>Fundador da Fit Health</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Entre em contato</h2>
+                    <p>Estamos prontos para transformar seu negócio digital. Preencha o formulário ao lado e nossa equipe entrará em contato em até 24 horas.</p>
+                    <p>Ou se preferir, entre em contato diretamente pelos nossos canais:</p>
+                    <ul>
+                        <li>📧 grsarto@gmail.com</li>
+                        <li>📱 (11) 97654-3210</li>
+                        <li>📍 Av. Paulista, 1000 - São Paulo</li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nome completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>GRS Digital</h3>
+                    <p>Especialistas em transformar presença digital em resultados reais para sua empresa.</p>
+                    <p><strong>Razão Social:</strong> 53954410 - Glauce Regina Sarto</p>
+                    <p><strong>CNPJ:</strong> 53.954.410/0001-38</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">FB</a>
+                        <a href="#" class="social-link">IG</a>
+                        <a href="#" class="social-link">LI</a>
+                        <a href="#" class="social-link">TT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="quick-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#benefits">Por que nos escolher</a></li>
+                        <li><a href="#about">Sobre nós</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <ul class="quick-links">
+                        <li><a href="#">Gestão de redes sociais</a></li>
+                        <li><a href="#">Identidade visual</a></li>
+                        <li><a href="#">Tráfego pago</a></li>
+                        <li><a href="#">Criação de sites</a></li>
+                        <li><a href="#">Consultoria de marketing</a></li>
+                        <li><a href="#">SEO</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <p>📧 grsarto@gmail.com</p>
+                    <p>📱 (11) 97654-3210</p>
+                    <p>📍 Av. Paulista, 1000 - São Paulo</p>
+                    <p><a href="privacy-policy.html">Política de Privacidade</a></p>
+                    <p><a href="terms-of-use.html">Termos de Uso</a></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 GRS Digital. 53954410 - Glauce Regina Sarto. CNPJ: 53.954.410/0001-38. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Política de Privacidade (página separada) -->
+    <div id="privacy-policy" style="display: none;">
+        <div class="container legal-page">
+            <div class="legal-content">
+                <h1>Política de Privacidade</h1>
+                <p>Última atualização: 05 de Abril de 2025</p>
+                
+                <p>A GRS Digital, razão social 53954410 - Glauce Regina Sarto, CNPJ 53.954.410/0001-38, valoriza a privacidade dos seus usuários e clientes. Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos suas informações pessoais quando você utiliza nosso site e serviços.</p>
+                
+                <h2>1. Informações que coletamos</h2>
+                <p>Podemos coletar os seguintes tipos de informações:</p>
+                <ul>
+                    <li><strong>Informações pessoais:</strong> Nome, endereço de e-mail, número de telefone, endereço e outras informações que você nos fornece voluntariamente através de formulários em nosso site.</li>
+                    <li><strong>Informações de uso:</strong> Dados sobre como você interage com nosso site, incluindo páginas visitadas, tempo gasto no site, links clicados e preferências.</li>
+                    <li><strong>Informações técnicas:</strong> Endereço IP, tipo de dispositivo, navegador, provedor de internet e dados de localização geográfica.</li>
+                </ul>
+                
+                <h2>2. Como usamos suas informações</h2>
+                <p>Utilizamos suas informações para:</p>
+                <ul>
+                    <li>Fornecer, manter e melhorar nossos serviços;</li>
+                    <li>Processar e responder às suas solicitações, dúvidas e comentários;</li>
+                    <li>Enviar comunicações sobre nossos serviços, promoções e novidades;</li>
+                    <li>Personalizar sua experiência em nosso site;</li>
+                    <li>Cumprir obrigações legais e regulatórias;</li>
+                    <li>Prevenir fraudes e proteger a segurança de nossos usuários e sistemas.</li>
+                </ul>
+                
+                <h2>3. Compartilhamento de informações</h2>
+                <p>Podemos compartilhar suas informações nas seguintes circunstâncias:</p>
+                <ul>
+                    <li>Com prestadores de serviços que nos ajudam a operar nosso negócio;</li>
+                    <li>Para cumprir com ob
