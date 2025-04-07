@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso | GRS Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Variáveis de cores */
+        :root {
+            --verde: #2ECC71;
+            --preto: #111111;
+            --branco: #FFFFFF;
+            --gelo: #F5F5F5;
+        }
+
+        /* Estilos gerais */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--preto);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--branco);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--preto);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--verde);
+        }
+
+        /* Legal Pages */
+        .legal-page {
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+
+        .legal-content {
+            background-color: var(--branco);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .legal-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .legal-content h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .legal-content h3 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .legal-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .legal-content ul, 
+        .legal-content ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .legal-content li {
+            margin-bottom: 10px;
+        }
+
+        .legal-content a {
+            color: var(--verde);
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-site {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: var(--verde);
+            color: var(--branco);
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--verde);
+        }
+
+        .back-to-site:hover {
+            background-color: transparent;
+            color: var(--verde);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 40px;
+            background-color: var(--verde);
+        }
+
+        .footer-column p {
+            color: #bbb;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--branco);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--verde);
+        }
+
+        .quick-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .quick-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .quick-links a:hover {
+            color: var(--verde);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .legal-content h1 {
+                font-size: 2rem;
+            }
+            .legal-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .legal-page {
+                padding: 100px 0 60px;
+            }
+            .legal-content {
+                padding: 30px;
+            }
+            .legal-content h1 {
+                font-size: 1.8rem;
+            }
+            .legal-content h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .legal-content {
+                padding: 20px;
+            }
+            .legal-content h1 {
+                font-size: 1.5rem;
+            }
+            .back-to-site {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">GRS <span>Digital</span></a>
+        </div>
+    </header>
+
+    <!-- Termos de Uso -->
+    <div class="container legal-page">
+        <div class="legal-content">
+            <h1>Termos de Uso</h1>
+            <p>Última atualização: 05 de Abril de 2025</p>
+            
+            <p>Bem-vindo aos Termos de Uso da GRS Digital, razão social 53954410 - Glauce Regina Sarto, CNPJ 53.954.410/0001-38. Este documento regula o uso do nosso site e serviços. Ao acessar ou utilizar nosso site, você concorda com os termos e condições aqui descritos. Caso não concorde, pedimos que não utilize nossos serviços.</p>
+            
+            <h2>1. Uso do Site</h2>
+            <p>O site da GRS Digital é destinado a fornecer informações sobre nossos serviços de marketing digital e permitir que os usuários entrem em contato conosco. Você concorda em usar o site de forma lícita e de acordo com estes Termos de Uso.</p>
+            <ul>
+                <li>Não utilize o site para fins ilegais ou não autorizados;</li>
+                <li>Não interfira no funcionamento do site ou tente acessar áreas restritas sem permissão;</li>
+                <li>Não publique ou envie conteúdo ofensivo, difamatório ou que viole direitos de terceiros.</li>
+            </ul>
+            
+            <h2>2. Propriedade Intelectual</h2>
+            <p>Todo o conteúdo presente no site, incluindo textos, imagens, logotipos, designs e outros materiais, é de propriedade da GRS Digital ou de seus licenciadores e está protegido por leis de direitos autorais e propriedade intelectual. Você não pode copiar, reproduzir, distribuir ou utilizar qualquer conteúdo sem nossa autorização expressa.</p>
+            
+            <h2>3. Serviços e Contratações</h2>
+            <p>Os serviços oferecidos pela GRS Digital, como gestão de redes sociais, tráfego pago, criação de sites e identidade visual, estão sujeitos a contratos específicos firmados entre a GRS Digital e o cliente. Estes Termos de Uso não substituem os contratos de prestação de serviços, que detalham as condições específicas de cada projeto.</p>
+            
+            <h2>4. Limitação de Responsabilidade</h2>
+            <p>A GRS Digital não se responsabiliza por:</p>
+            <ul>
+                <li>Interrupções ou falhas no acesso ao site devido a problemas técnicos ou de terceiros;</li>
+                <li>Prejuízos causados pelo uso indevido do site por parte do usuário;</li>
+                <li>Resultados de campanhas de marketing que dependem de fatores externos, como comportamento do mercado ou decisões do cliente.</li>
+            </ul>
+            
+            <h2>5. Alterações nos Termos</h2>
+            <p>Podemos atualizar estes Termos de Uso periodicamente para refletir mudanças em nossas práticas ou em exigências legais. A versão mais recente estará sempre disponível nesta página, e a data da última atualização será indicada no início do documento.</p>
+            
+            <h2>6. Contato</h2>
+            <p>Se você tiver dúvidas sobre estes Termos de Uso, entre em contato conosco:</p>
+            <ul>
+                <li>📧 <a href="mailto:contato@grsdigital.com.br">contato@grsdigital.com.br</a></li>
+            </ul>
+
+            <a href="index.html" class="back-to-site">Voltar ao site</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>GRS Digital</h3>
+                    <p>Somos especialistas em gerar vendas no digital</p>
+                    <p><strong>Razão Social:</strong> 53954410 - Glauce Regina Sarto</p>
+                    <p><strong>CNPJ:</strong> 53.954.410/0001-38</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">FB</a>
+                        <a href="#" class="social-link">IG</a>
+                        <a href="#" class="social-link">LI</a>
+                        <a href="#" class="social-link">TT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="quick-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#benefits">Por que nos escolher</a></li>
+                        <li><a href="index.html#about">Sobre nós</a></li>
+                        <li><a href="index.html#services">Serviços</a></li>
+                        <li><a href="index.html#testimonials">Depoimentos</a></li>
+                        <li><a href="index.html#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <ul class="quick-links">
+                        <li><a href="#">Gestão de redes sociais</a></li>
+                        <li><a href="#">Identidade visual</a></li>
+                        <li><a href="#">Tráfego pago</a></li>
+                        <li><a href="#">Criação de sites</a></li>
+                        <li><a href="#">Consultoria de marketing</a></li>
+                        <li><a href="#">SEO</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <p>📧 <a href="mailto:contato@grsdigital.com.br">contato@grsdigital.com.br</a></p>
+                    <p><a href="privacy-policy.html">Política de Privacidade</a></p>
+                    <p><a href="terms-of-use.html">Termos de Uso</a></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 GRS Digital. 53954410 - Glauce Regina Sarto. CNPJ: 53.954.410/0001-38. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
